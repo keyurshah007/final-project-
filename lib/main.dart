@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'post.dart';
+import 'candidates.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,9 +24,10 @@ class User {
   User({required this.email, required this.password});
 }
 
-List<User> hardcodedUsers = [
+List<User> users = [
   User(email: 'test@test.com', password: 'test'),
   User(email: 'keyur@gmail.com', password: 'abc'),
+  User(email: 'aaa', password: 'aaa'),
 ];
 
 class LoginScreen extends StatefulWidget {
@@ -43,12 +46,16 @@ class _LoginScreenState extends State<LoginScreen> {
     String enteredEmail = _emailController.text;
     String enteredPassword = _passwordController.text;
 
-    bool isValidUser = hardcodedUsers.any((user) =>
+    bool isValidUser = users.any((user) =>
     user.email == enteredEmail && user.password == enteredPassword);
 
     if (isValidUser) {
-      _showSnackBar(context, 'Login successful');
-
+      //Navigate to CandidateScreen
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => CandidateScreen()),
+      );
+      // _showSnackBar(context, 'successful login');
     } else {
       _showSnackBar(context, 'Invalid email or password');
 
