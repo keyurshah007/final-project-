@@ -2,6 +2,19 @@ import 'package:flutter/material.dart';
 import 'candidate.dart';
 import 'candidate_detail.dart';
 
+class Post {
+  final String title;
+  final String content;
+
+  Post({required this.title, required this.content});
+  Map<String, dynamic> toMap() {
+    return {
+      'title': title,
+      'content': content,
+    };
+  }
+}
+
 void main() {
   runApp(MyApp());
 }
@@ -18,75 +31,139 @@ class MyApp extends StatelessWidget {
 class CandidateScreen extends StatelessWidget {
   final List<Candidate> candidates = [
     Candidate(
-      name: 'Lewis Hamilton',
-      image: 'assets/lewis_hamilton.jpg',
-      age: 37,
-      about: 'Seven-time Formula One World Champion',
-      job: 'F1 Driver',
+      'Lewis Hamilton',
+      'images/max.jpeg',
+      37,
+      'Seven-time Formula One World Champion',
+      'F1 Driver',
+      posts: [
+        Post(
+          title: 'My First Post',
+          content: 'This is the content of my first post.',
+        ),
+        Post(
+          title: 'Another Post',
+          content: 'This is another post.',
+        ),
+      ],
     ),
     Candidate(
-      name: 'Max Verstappen',
-      image: 'assets/max_verstappen.jpg',
-      age: 24,
-      about: 'Formula One driver currently competing for Red Bull Racing',
-      job: 'F1 Driver',
+      'Max Verstappen',
+      'images/perez.jpeg',
+      24,
+       'Formula One driver currently competing for Red Bull Racing',
+       'F1 Driver',
+      posts: [
+        Post(
+          title: 'Verstappen\'s Victory',
+          content: 'Recap of Verstappen\'s latest race victory.',
+        ),
+      ],
     ),
     Candidate(
-      name: 'Valtteri Bottas',
-      image: 'assets/valtteri_bottas.jpg',
-      age: 32,
-      about: 'Finnish racing driver currently competing for Mercedes',
-      job: 'F1 Driver',
+       'Valtteri Bottas',
+       'images/hamilton.jpeg',
+      32,
+       'Finnish racing driver currently competing for Mercedes',
+       'F1 Driver',
+      posts: [
+        Post(
+          title: 'Bottas\'s Update',
+          content: 'Updates from Valtteri Bottas on his upcoming race.',
+        ),
+      ],
     ),
     Candidate(
-      name: 'Sergio Perez',
-      image: 'assets/sergio_perez.jpg',
-      age: 31,
-      about: 'Mexican racing driver currently competing for Red Bull Racing',
-      job: 'F1 Driver',
+       'Sergio Perez',
+       'images/russel.jpeg',
+       31,
+       'Mexican racing driver currently competing for Red Bull Racing',
+       'F1 Driver',
+      posts: [
+        Post(
+          title: 'Perez\'s Progress',
+          content: 'Trackside insights from Sergio Perez.',
+        ),
+      ],
     ),
-    Candidate(
-      name: 'Charles Leclerc',
-      image: 'assets/charles_leclerc.jpg',
-      age: 24,
-      about: 'Monegasque racing driver currently driving for Ferrari',
-      job: 'F1 Driver',
-    ),
-    Candidate(
-      name: 'Daniel Ricciardo',
-      image: 'assets/daniel_ricciardo.jpg',
-      age: 32,
-      about: 'Australian racing driver currently competing for McLaren',
-      job: 'F1 Driver',
-    ),
-    Candidate(
-      name: 'Lando Norris',
-      image: 'assets/lando_norris.jpg',
-      age: 22,
-      about: 'British racing driver currently competing for McLaren',
-      job: 'F1 Driver',
-    ),
-    Candidate(
-      name: 'Carlos Sainz',
-      image: 'assets/carlos_sainz.jpg',
-      age: 27,
-      about: 'Spanish racing driver currently competing for Ferrari',
-      job: 'F1 Driver',
-    ),
-    Candidate(
-      name: 'Fernando Alonso',
-      image: 'assets/fernando_alonso.jpg',
-      age: 40,
-      about: 'Spanish racing driver currently competing for Alpine',
-      job: 'F1 Driver',
-    ),
-    Candidate(
-      name: 'Sebastian Vettel',
-      image: 'assets/sebastian_vettel.jpg',
-      age: 34,
-      about: 'German racing driver currently competing for Aston Martin',
-      job: 'F1 Driver',
-    ),
+    // Candidate(
+    //   name: 'Charles Leclerc',
+    //   image: 'images/cahrles.jpeg',
+    //   age: 24,
+    //   about: 'Monegasque racing driver currently driving for Ferrari',
+    //   job: 'F1 Driver',
+    //   posts: [
+    //     Post(
+    //       title: 'Leclerc\'s Thoughts',
+    //       content: 'Thoughts from Charles Leclerc on his performance.',
+    //     ),
+    //   ],
+    // ),
+    // Candidate(
+    //   name: 'Daniel Ricciardo',
+    //   image: 'images/carlos.jpeg',
+    //   age: 32,
+    //   about: 'Australian racing driver currently competing for McLaren',
+    //   job: 'F1 Driver',
+    //   posts: [
+    //     Post(
+    //       title: 'Ricciardo\'s Racing Tips',
+    //       content: 'Tips and tricks from Daniel Ricciardo for aspiring drivers.',
+    //     ),
+    //   ],
+    // ),
+    // Candidate(
+    //   name: 'Lando Norris',
+    //   image: 'images/lando.jpeg',
+    //   age: 22,
+    //   about: 'British racing driver currently competing for McLaren',
+    //   job: 'F1 Driver',
+    //   posts: [
+    //     Post(
+    //       title: 'Norris\'s News',
+    //       content: 'Latest updates from Lando Norris.',
+    //     ),
+    //   ],
+    // ),
+    // Candidate(
+    //   name: 'Carlos Sainz',
+    //   image: 'images/piastri.jpeg',
+    //   age: 27,
+    //   about: 'Spanish racing driver currently competing for Ferrari',
+    //   job: 'F1 Driver',
+    //   posts: [
+    //     Post(
+    //       title: 'Sainz\'s Strategy',
+    //       content: 'Insights into Carlos Sainz\'s racing strategy.',
+    //     ),
+    //   ],
+    // ),
+    // Candidate(
+    //   name: 'Fernando Alonso',
+    //   image: 'images/alonso.jpeg',
+    //   age: 40,
+    //   about: 'Spanish racing driver currently competing for Alpine',
+    //   job: 'F1 Driver',
+    //   posts: [
+    //     Post(
+    //       title: 'Alonso\'s Analysis',
+    //       content: 'Analyzing Fernando Alonso\'s recent performances.',
+    //     ),
+    //   ],
+    // ),
+    // Candidate(
+    //   name: 'Sebastian Vettel',
+    //   image: 'images/ricardo.jpeg',
+    //   age: 34,
+    //   about: 'German racing driver currently competing for Aston Martin',
+    //   job: 'F1 Driver',
+    //   posts: [
+    //     Post(
+    //       title: 'Vettel\'s View',
+    //       content: 'Sebastian Vettel shares his views on the upcoming race.',
+    //     ),
+    //   ],
+    // ),
     // Add more candidates as needed
   ];
 

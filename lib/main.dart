@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'post.dart';
 import 'candidates.dart';
+import 'home.dart';
 
 void main() {
   runApp(MyApp());
@@ -53,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
       //Navigate to CandidateScreen
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => CandidateScreen()),
+        MaterialPageRoute(builder: (context) => MyHomePage()),
       );
       // _showSnackBar(context, 'successful login');
     } else {
