@@ -31,141 +31,142 @@ class MyApp extends StatelessWidget {
 class CandidateScreen extends StatelessWidget {
   final List<Candidate> candidates = [
     Candidate(
-      'Lewis Hamilton',
+      'Max Verstappen',
       'images/max.jpeg',
-      37,
-      'Seven-time Formula One World Champion',
+      26,
+      'Max Verstappen is a professional driver who believes speed is his middle name. He once raced a cheetah... and won.',
       'F1 Driver',
       posts: [
         Post(
-          title: 'My First Post',
-          content: 'This is the content of my first post.',
+          title: 'Max Verstappen',
+          content: 'Just finished an intense training session. Ready to hit the track and chase victory! #SimplyLovely',
         ),
         Post(
-          title: 'Another Post',
-          content: 'This is another post.',
+          title: 'Max Verstappen',
+          content: 'Another day, another Win 🏆 Thanks to my amazing team and fans for the support.',
         ),
       ],
     ),
     Candidate(
-      'Max Verstappen',
+      'Sergio Perez',
       'images/perez.jpeg',
-      24,
-       'Formula One driver currently competing for Red Bull Racing',
-       'F1 Driver',
+      29,
+      'Sergio Perez, also known as "Mexican Minister of Defence," once outpaced a tornado on the track. He claims it was just another day at the office.',
+      'F1 Driver',
       posts: [
         Post(
-          title: 'Verstappen\'s Victory',
-          content: 'Recap of Verstappen\'s latest race victory.',
+          title: 'Sergio Perez',
+          content: 'Not Sure will I have a Seat for 2025, but still Red Bull Racing on TOP! 🏆🇲🇽 #Checo',
         ),
       ],
     ),
     Candidate(
-       'Valtteri Bottas',
-       'images/hamilton.jpeg',
-      32,
-       'Finnish racing driver currently competing for Mercedes',
-       'F1 Driver',
+      'Lewis Hamilton',
+      'images/hamilton.jpeg',
+      38,
+      'Lewis Hamilton, also known as "OLD DOG," 7 Time word drivers champion',
+      'F1 Driver',
       posts: [
         Post(
-          title: 'Bottas\'s Update',
-          content: 'Updates from Valtteri Bottas on his upcoming race.',
+          title: 'Lewis Hamilton',
+          content: 'Life is all about pushing the boundaries and chasing dreams. #TeamLH #StillWeRise',
         ),
       ],
     ),
     Candidate(
-       'Sergio Perez',
-       'images/russel.jpeg',
-       31,
-       'Mexican racing driver currently competing for Red Bull Racing',
-       'F1 Driver',
+      'George Russel',
+      'images/russel.jpeg',
+      27,
+      'George Russel, also known as "The Silent Speedster," once won a race without saying a word. Legend has it, his car just knew where to go.',
+      'F1 Driver',
       posts: [
         Post(
-          title: 'Perez\'s Progress',
-          content: 'Trackside insights from Sergio Perez.',
+          title: 'George Russel',
+          content: 'RED FLAG!! RED FLAG!! RED FLAG!! RED FLAG!! RED FLAG!! RED FLAG!! RED FLAG!!',
         ),
       ],
     ),
-    // Candidate(
-    //   name: 'Charles Leclerc',
-    //   image: 'images/cahrles.jpeg',
-    //   age: 24,
-    //   about: 'Monegasque racing driver currently driving for Ferrari',
-    //   job: 'F1 Driver',
-    //   posts: [
-    //     Post(
-    //       title: 'Leclerc\'s Thoughts',
-    //       content: 'Thoughts from Charles Leclerc on his performance.',
-    //     ),
-    //   ],
-    // ),
-    // Candidate(
-    //   name: 'Daniel Ricciardo',
-    //   image: 'images/carlos.jpeg',
-    //   age: 32,
-    //   about: 'Australian racing driver currently competing for McLaren',
-    //   job: 'F1 Driver',
-    //   posts: [
-    //     Post(
-    //       title: 'Ricciardo\'s Racing Tips',
-    //       content: 'Tips and tricks from Daniel Ricciardo for aspiring drivers.',
-    //     ),
-    //   ],
-    // ),
-    // Candidate(
-    //   name: 'Lando Norris',
-    //   image: 'images/lando.jpeg',
-    //   age: 22,
-    //   about: 'British racing driver currently competing for McLaren',
-    //   job: 'F1 Driver',
-    //   posts: [
-    //     Post(
-    //       title: 'Norris\'s News',
-    //       content: 'Latest updates from Lando Norris.',
-    //     ),
-    //   ],
-    // ),
-    // Candidate(
-    //   name: 'Carlos Sainz',
-    //   image: 'images/piastri.jpeg',
-    //   age: 27,
-    //   about: 'Spanish racing driver currently competing for Ferrari',
-    //   job: 'F1 Driver',
-    //   posts: [
-    //     Post(
-    //       title: 'Sainz\'s Strategy',
-    //       content: 'Insights into Carlos Sainz\'s racing strategy.',
-    //     ),
-    //   ],
-    // ),
-    // Candidate(
-    //   name: 'Fernando Alonso',
-    //   image: 'images/alonso.jpeg',
-    //   age: 40,
-    //   about: 'Spanish racing driver currently competing for Alpine',
-    //   job: 'F1 Driver',
-    //   posts: [
-    //     Post(
-    //       title: 'Alonso\'s Analysis',
-    //       content: 'Analyzing Fernando Alonso\'s recent performances.',
-    //     ),
-    //   ],
-    // ),
-    // Candidate(
-    //   name: 'Sebastian Vettel',
-    //   image: 'images/ricardo.jpeg',
-    //   age: 34,
-    //   about: 'German racing driver currently competing for Aston Martin',
-    //   job: 'F1 Driver',
-    //   posts: [
-    //     Post(
-    //       title: 'Vettel\'s View',
-    //       content: 'Sebastian Vettel shares his views on the upcoming race.',
-    //     ),
-    //   ],
-    // ),
-    // Add more candidates as needed
+    Candidate(
+      'Charles Leclerc',
+      'images/cahrles.jpeg',
+      26,
+      'Charles Leclerc, also known as "The Monaco Marvel," once drove his car backward just to see if anyone would notice. Spoiler alert: They didn\'t.',
+      'F1 Driver',
+      posts: [
+        Post(
+          title: 'Charles Leclerc',
+          content: 'I am Stupid, I am stupid, Nooooooooo!!!!!!!',
+        ),
+      ],
+    ),
+    Candidate(
+      'Carlos Sainz',
+      'images/carlos.jpeg',
+      26,
+      'Carlos Sainz, also known as "The Spanish Sensation," once made his pit crew do the Macarena during a tire change. They still don\'t know why.',
+      'F1 Driver',
+      posts: [
+        Post(
+          title: 'Carlos Sainz',
+          content: 'Smooth Operatooooorrrrrr',
+        ),
+      ],
+    ),
+    Candidate(
+      'Lando Norris',
+      'images/lando.jpeg',
+      23,
+      'Lando Norris, also known as "The British Bullet," once won a race blindfolded... just for fun. His excuse? He wanted to test his luck.',
+      'F1 Driver',
+      posts: [
+        Post(
+          title: 'Lando Norris',
+          content: "Dont know when I'll win a race, but mommy i did a thing #LN4",
+        ),
+      ],
+    ),
+    Candidate(
+      'Oscar Piastri',
+      'images/piastri.jpeg',
+      22,
+      'Oscar Piastri, also known as "The Aussie Ace," once took a detour through the outback during a race. He claimed he was just saying hello to the kangaroos.',
+      'F1 Driver',
+      posts: [
+        Post(
+          title: 'Oscar Piastri',
+          content: 'Embracing the journey and striving for greatness. Keep believing, keep pushing! 🇦🇺 #OP31',
+        ),
+      ],
+    ),
+    Candidate(
+      'Fernando Alonso',
+      'images/alonso.jpeg',
+      40,
+      'Fernando Alonso, also known as "The Spanish Samurai," once won a race while juggling oranges... because why not?',
+      'F1 Driver',
+      posts: [
+        Post(
+          title: 'Fernando Alonso',
+          content: 'Experience is the key to success. Learning from every lap and every race. #FA14',
+        ),
+      ],
+    ),
+    Candidate(
+      'Daniel Ricciardo',
+      'images/ricardo.jpeg',
+      34,
+      'Daniel Ricciardo, also known as "Honey Badger," once convinced his car to do a backflip... just to impress his fans.',
+      'F1 Driver',
+      posts: [
+        Post(
+          title: 'Daniel Ricciardo',
+          content: 'Daniel Ricciardo shares his views on the upcoming race. #DR3',
+        ),
+      ],
+    ),
   ];
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -174,24 +175,24 @@ class CandidateScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.deepOrange[300],
         title: Text('Candidates'),
-        centerTitle: true, // Center the title and logo
+        centerTitle: true,
         leading: Image.asset(
-          'images/logo.png', // Replace 'assets/logo.png' with the path to your logo image
-          width: 40, // Adjust the width of the logo as needed
+          'images/logo.png',
+          width: 40,
         ),
       ),
       body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, // Number of columns
-          crossAxisSpacing: 0.5, // Spacing between columns
-          mainAxisSpacing: 0.5, // Spacing between rows
-          childAspectRatio: 1.0, // Aspect ratio of each grid item
+          crossAxisCount: 2,
+          crossAxisSpacing: 0.5,
+          mainAxisSpacing: 0.5,
+          childAspectRatio: 1.0,
         ),
         itemCount: candidates.length,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              // Navigate to candidate details screen
+
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => CandidateDetailsScreen(candidate: candidates[index])),
