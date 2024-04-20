@@ -89,20 +89,22 @@ class _CandidateDetailsScreenState extends State<CandidateDetailsScreen> {
                 ),
               ),
               SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  _connectWithCandidate(widget.candidate);
-                },
-                child: Text(
-                  isConnected ? 'Disconnect' : 'Connect',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
+              Center( // Center the Connect button
+                child: ElevatedButton(
+                  onPressed: () {
+                    _connectWithCandidate(widget.candidate);
+                  },
+                  child: Text(
+                    isConnected ? 'Disconnect' : 'Connect',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
                   ),
-                ),
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(
-                    isConnected ? Colors.red : Colors.blue,
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      isConnected ? Colors.red : Colors.blue,
+                    ),
                   ),
                 ),
               ),
