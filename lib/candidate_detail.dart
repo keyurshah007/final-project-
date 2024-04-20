@@ -10,7 +10,8 @@ class CandidateDetailsScreen extends StatefulWidget {
   const CandidateDetailsScreen({required this.candidate});
 
   @override
-  _CandidateDetailsScreenState createState() => _CandidateDetailsScreenState();
+  _CandidateDetailsScreenState createState() =>
+      _CandidateDetailsScreenState();
 }
 
 class _CandidateDetailsScreenState extends State<CandidateDetailsScreen> {
@@ -74,30 +75,35 @@ class _CandidateDetailsScreenState extends State<CandidateDetailsScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Center(
-                child: Column(
-                  children: [
-                    CircleAvatar(
+                child: GestureDetector(
+                  onTap: () {
+                    _showFullScreenImage(context);
+                  },
+                  child: Hero(
+                    tag: widget.candidate.image,
+                    child: CircleAvatar(
                       radius: 150,
                       backgroundImage: AssetImage(widget.candidate.image),
                     ),
-                    SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: () {
-                        _connectWithCandidate(widget.candidate);
-                      },
-                      child: Text(
-                        isConnected ? 'Disconnect' : 'Connect',
-                        style: TextStyle(color: Colors.white,fontSize: 16,),
-                          // Set the text color to white
-                      ),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                          isConnected ? Colors.red : Colors.blue,
-                        ),
-                      ),
-                    ),
-
-                  ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  _connectWithCandidate(widget.candidate);
+                },
+                child: Text(
+                  isConnected ? 'Disconnect' : 'Connect',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
+                ),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(
+                    isConnected ? Colors.red : Colors.blue,
+                  ),
                 ),
               ),
               SizedBox(height: 20),
@@ -206,5 +212,28 @@ class _CandidateDetailsScreenState extends State<CandidateDetailsScreen> {
   void _saveConnectionStatus() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setBool(widget.candidate.name + "_connected", isConnected);
+  }
+
+  void _showFullScreenImage(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => Scaffold(
+          backgroundColor: Colors.deepOrange[300],
+          appBar: AppBar(
+            backgroundColor: Colors.deepOrange[300],
+          ),
+          body: Center(
+            child: Hero(
+              tag: widget.candidate.image,
+              child: Image.asset(
+                widget.candidate.image,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

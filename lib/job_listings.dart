@@ -1,8 +1,10 @@
 // job_listings_page.dart
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'job_description.dart';
 import 'add_job.dart';
+
 class JobListingsPage extends StatefulWidget {
   @override
   _JobListingsPageState createState() => _JobListingsPageState();
@@ -30,7 +32,6 @@ class _JobListingsPageState extends State<JobListingsPage> {
     ),
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,27 +50,36 @@ class _JobListingsPageState extends State<JobListingsPage> {
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
             onTap: () {
-              // Navigate to job description page
+              // Navigate to job description page with page transition effect
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => JobDescriptionPage(jobListing: jobListings[index]),
+                PageTransition(
+                  type: PageTransitionType.fade,
+                  duration: Duration(milliseconds: 500), // Adjust transition duration as needed
+                  child: JobDescriptionPage(
+                    jobListing: jobListings[index],
+                  ),
                 ),
               );
             },
-            child: JobCard(
-              jobListing: jobListings[index],
+            child: Hero(
+              tag: 'jobCard${jobListings[index].position}',
+              child: JobCard(
+                jobListing: jobListings[index],
+              ),
             ),
           );
         },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Navigate to create job page
+          // Navigate to create job page with page transition effect
           Navigator.push(
             context,
-            MaterialPageRoute(
-              builder: (context) => CreateJobPage(), // Define CreateJobPage
+            PageTransition(
+              type: PageTransitionType.fade,
+              duration: Duration(milliseconds: 250), // Adjust transition duration as needed
+              child: CreateJobPage(), // Define CreateJobPage
             ),
           );
         },

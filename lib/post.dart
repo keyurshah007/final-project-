@@ -8,13 +8,18 @@ class PostScreen extends StatefulWidget {
   _PostScreenState createState() => _PostScreenState();
 }
 
-class _PostScreenState extends State<PostScreen> {
+class _PostScreenState extends State<PostScreen> with SingleTickerProviderStateMixin {
   List<Post> posts = [];
+  late AnimationController _animationController;
 
   @override
   void initState() {
     super.initState();
     _loadPosts();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 500),
+    );
   }
 
   Future<void> _loadPosts() async {
@@ -44,28 +49,46 @@ class _PostScreenState extends State<PostScreen> {
   }
 
   @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.deepOrange[300],
-        appBar: AppBar(
-          backgroundColor: Colors.deepOrange[300],
-          title: Text('Posts'),
-          centerTitle: true, // Center the title and logo
-          leading: Image.asset(
-            'images/logo.png', // Replace 'assets/logo.png' with the path to your logo image
-            width: 40, // Adjust the width of the logo as needed
-          ),
+      appBar: AppBar(
+        backgroundColor: Colors.deepOrange[300],
+        title: Text('Posts'),
+        centerTitle: true, // Center the title and logo
+        leading: Image.asset(
+          'images/logo.png', // Replace 'assets/logo.png' with the path to your logo image
+          width: 40, // Adjust the width of the logo as needed
         ),
-
+      ),
       body: ListView.builder(
         itemCount: posts.length,
         itemBuilder: (context, index) {
-          return Card(
-            elevation: 4, // Adjust the elevation for shadow
-            margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-            child: ListTile(
-              title: Text(posts[index].title),
-              subtitle: Text(posts[index].content),
+          _animationController.forward(from: 0.0);
+          return FadeTransition(
+            opacity: Tween<double>(begin: 0, end: 1).animate(
+              CurvedAnimation(
+                parent: _animationController,
+                curve: Interval(
+                  0.5 / posts.length * index,
+                  1,
+                  curve: Curves.easeIn,
+                ),
+              ),
+            ),
+            child: Card(
+              elevation: 4, // Adjust the elevation for shadow
+              margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+              child: ListTile(
+                title: Text(posts[index].title),
+                subtitle: Text(posts[index].content),
+              ),
             ),
           );
         },

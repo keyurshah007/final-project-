@@ -1,3 +1,4 @@
+// job_description.dart
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'job_listings.dart';
@@ -53,13 +54,16 @@ class _JobDescriptionPageState extends State<JobDescriptionPage> {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                widget.jobListing.image,
-                fit: BoxFit.cover,
-                width: MediaQuery.of(context).size.width,
-                height: 200, // Set image height
+            Hero(
+              tag: 'jobCard${widget.jobListing.position}',
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset(
+                  widget.jobListing.image,
+                  fit: BoxFit.cover,
+                  width: MediaQuery.of(context).size.width,
+                  height: 200, // Set image height
+                ),
               ),
             ),
             SizedBox(height: 20),
