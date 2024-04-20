@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   shared_preferences: 2.0.0
+  image_picker: ^0.8.4+2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -74,6 +75,10 @@ flutter:
      - images/ricardo.jpeg
      - images/cahrles.jpeg
      - images/carlos.jpeg
+     - images/ferrari.jpg
+     - images/rbr.jpg
+     - images/merc.jpg
+     - images/rb.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

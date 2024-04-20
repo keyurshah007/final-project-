@@ -173,9 +173,8 @@ class CandidateScreen extends StatelessWidget {
       backgroundColor: Colors.deepOrange[300],
       appBar: AppBar(
         backgroundColor: Colors.deepOrange[300],
-
         title: Text('Candidates'),
-
+        centerTitle: true, // Center the title and logo
         leading: Image.asset(
           'images/logo.png', // Replace 'assets/logo.png' with the path to your logo image
           width: 40, // Adjust the width of the logo as needed

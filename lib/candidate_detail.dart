@@ -62,7 +62,9 @@ class _CandidateDetailsScreenState extends State<CandidateDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.deepOrange[300],
       appBar: AppBar(
+        backgroundColor: Colors.deepOrange[300],
         title: Text(widget.candidate.name),
       ),
       body: SingleChildScrollView(
@@ -83,13 +85,18 @@ class _CandidateDetailsScreenState extends State<CandidateDetailsScreen> {
                       onPressed: () {
                         _connectWithCandidate(widget.candidate);
                       },
-                      child: Text(isConnected ? 'Disconnect' : 'Connect'),
+                      child: Text(
+                        isConnected ? 'Disconnect' : 'Connect',
+                        style: TextStyle(color: Colors.white,fontSize: 16,),
+                          // Set the text color to white
+                      ),
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                          isConnected ? Colors.red : Colors.green,
+                          isConnected ? Colors.red : Colors.blue,
                         ),
                       ),
                     ),
+
                   ],
                 ),
               ),
@@ -137,10 +144,10 @@ class _CandidateDetailsScreenState extends State<CandidateDetailsScreen> {
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold),
                           ),
-                          SizedBox(height: 4),
+                          SizedBox(height: 9),
                           Text(
                             connectedPosts[index].content,
-                            style: TextStyle(fontSize: 14),
+                            style: TextStyle(fontSize: 15),
                           ),
                         ],
                       ),
